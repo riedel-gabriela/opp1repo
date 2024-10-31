@@ -6,19 +6,17 @@ package org.example;
 public class App {
 
     public static void main(String[] args) {
-        Carro c = new Carro();
+        //Carro c = new Carro();
 
-        c.obterVelocidade();
-        c.aceleraCarro(20);
-        System.out.println(c.obterVelocidade());
+        //c.obterVelocidade();
+        //c.aceleraCarro(20);
+        //System.out.println(c.obterVelocidade());
 
         Pessoa gabi = new Pessoa("Gabriela", "050505502");
         Pessoa sofia = new Pessoa("Sofia", "75874864");
 
-        gabi.defineNome("Gabriela");
-        gabi.defineCPF("009.121.121-3");
-        sofia.defineNome("Sofia");
-        sofia.defineCPF("003.665.969-89");
+        Estudante e = new Estudante(17, "Leonardo", "Design");
 
+        System.out.println(e.toString());
     }
 }

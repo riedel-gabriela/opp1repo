@@ -8,21 +8,41 @@ public class Pessoa {
     private String telefone;
     private String email;
 
-    public Pessoa(String n, String c) {
-        nome = n;
-        cpf = c;
+    // Para gerar construtores: botão direito > generate > constructor > seleciona os parametros > ok
+
+    public Pessoa(String nome) {
+        this.nome = nome;
     }
 
-    public Pessoa() {
-        // Posso criar quantos métodos construtores eu quiser, desde que a lista de parâmetros seja diferente EM NÚMERO E TIPO.
+    public Pessoa(String nome, String sobrenome) {
+        this(nome);
+        this.sobrenome = sobrenome;
     }
 
-    public void defineCPF(String novoCpf) {
-       cpf = novoCpf;
+    public Pessoa(String nome, String sobrenome, String cpf) {
+        this(nome, sobrenome);
+        this.cpf = cpf;
     }
-    public void defineNome(String novoNome) {
-        nome = novoNome;
+
+    // Para gerar getter and setter: botão direito > generate > getter and setter > seleciona os parametros > ok
+
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getSobrenome() {
+        return sobrenome;
+    }
+
+    public void setSobrenome(String sobrenome) {
+        this.sobrenome = sobrenome;
+    }
+
 
     public String getNome() {
         return ("nome: " + nome);
