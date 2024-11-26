@@ -1,8 +1,5 @@
 package org.example;
 
-import org.checkerframework.checker.units.qual.A;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashSet;
 
@@ -10,19 +7,20 @@ public class Aluno {
     private String nome;
     private Long matricula;
     // mais de um telefone
-    private ArrayList<Integer> telefones;
+    private ArrayList<String> telefones;
     // nome do pai e da mãe
     private ArrayList<String> filiacao;
-    //mais de uma disciplina
+    //mais de uma disciplina e não pode elementos duplicados
     private HashSet<String> disciplinas;
 
     public Aluno(String nome, String pai, String mae, Long matricula) {
         this.nome = nome;
         this.matricula = matricula;
-        ArrayList<String> filiacao = new ArrayList<>();
-        filiacao.add(pai);
-        filiacao.add(mae);
-        this.filiacao = filiacao;
+
+        this.filiacao = new ArrayList<>();
+        this.filiacao.add(pai);
+        this.filiacao.add(mae);
+
         this.disciplinas = new HashSet<>();
         this.telefones = new ArrayList<>();
     }
@@ -43,38 +41,38 @@ public class Aluno {
         this.matricula = matricula;
     }
 
-    public ArrayList<Integer> getTelefones() {
+    public ArrayList<String> getTelefones() {
         return telefones;
     }
 
-    public void setTelefones(ArrayList<Integer> telefones) {
-        this.telefones = telefones;
+    public void setTelefones(String telefones) {
+        this.telefones.add(telefones);
     }
 
     public ArrayList<String> getFiliacao() {
         return filiacao;
     }
 
-    public void setFiliacao(ArrayList<String> filiacao) {
-        this.filiacao = filiacao;
-    }
 
-    public ArrayList<String> getDisciplinas() {
+    public HashSet<String> getDisciplinas() {
         return disciplinas;
     }
 
-    public void setDisciplinas(String disciplina) {
+    public void setDisciplina(String disciplina) {
         this.disciplinas.add(disciplina);
     }
 
     @Override
     public String toString() {
-        return "Aluno {" +
-                "\n nome: " + nome +
-                ",\n matricula: " + matricula +
-                ",\n telefones: " + telefones +
-                ",\n filiacao: " + filiacao +
-                ",\n disciplinas: " + disciplinas +
-                "\n}";
+        StringBuilder telefonesSB = new StringBuilder();
+        this.telefones.forEach(telefone -> telefonesSB.append("\n  - ").append(telefone));
+        StringBuilder disciplinasSB = new StringBuilder();
+        this.disciplinas.forEach(disciplina -> disciplinasSB.append("\n  - ").append(disciplina));
+
+        return "\nMatrícula: " + matricula +
+                "\nNome: " + nome +
+                "\nFiliação: " + "\n  pai: " + this.filiacao.get(0) + "\n  mãe: " + this.filiacao.get(1) +
+                "\nTelefones: " + telefonesSB +
+                "\nDisciplinas: " + disciplinasSB;
     }
 }

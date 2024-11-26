@@ -19,18 +19,18 @@ public class App {
         numeros.add(5);
 
         //for each tradicional
-        for (Integer numero: numeros) {
-            System.out.println(numero);
-        }
+        //for (Integer numero: numeros) {
+        //    System.out.println(numero);
+        //}
 
         // lambda
-        numeros.forEach(e -> System.out.println(e));
+        //numeros.forEach(e -> System.out.println(e));
 
         //method reference
-        numeros.forEach(System.out::println);
+        //numeros.forEach(System.out::println);
 
         numeros.removeIf(numero -> numero % 10 == 0);
-        System.out.println(numeros);
+        //System.out.println(numeros);
 
         //__________________________________________________________________________________
 
@@ -40,11 +40,11 @@ public class App {
         nomes.add("Alexandre");
         nomes.add("Letícia");
 
-        System.out.println(nomes);
+        //System.out.println(nomes);
         nomes.removeIf(nome -> nome.equals("Alexandre"));
-        System.out.println(nomes);
+        //System.out.println(nomes);
 
-        nomes.stream().filter(nome -> !nome.equals("Letícia")).forEach(System.out::println);
+        //nomes.stream().filter(nome -> !nome.equals("Letícia")).forEach(System.out::println);
 
         //______________________________________________________________________________
 
@@ -62,9 +62,10 @@ public class App {
         Aluno a = new Aluno(
                "Alexandre Pereira", "Osvaldo Montenegro", "Fernanda Abreu", 1L
         );
-
+        a.setDisciplina("POO");
+        a.setDisciplina("FE1");
+        a.setTelefones("48996376006");
+        a.setTelefones("47988247349");
         System.out.println(a);
-
-
     }
 }
