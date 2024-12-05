@@ -18,9 +18,9 @@ classDiagram
     }
     class Agenda {
         - ArrayList~Contato~ contatos
-        + void addContato(Contato contato)
-        + void deleteContato(int index)
-        + void updateContato(int index, Contato contato)
+        + boolean addContato(Contato contato)
+        + boolean deleteContato(int index)
+        + boolean updateContato(int index, Contato contato)
         + Contato getContato(int index)
         + Sring getTodosContatos()
     }
@@ -30,21 +30,29 @@ classDiagram
         - String dataDeNascimento
         - ArrayList~Telefone~ telefones
         - ArrayList~Email~ emails
-        + void addTelefone(Telefone telefone)
-        + void addEmail(Email email)
-        + void deleteTelefone(int index)
-        + void deleteEmail(int index)
-        + String getTelefones()
-        + String getEmails()
+        + Contato(Strig nome, String sobrenome, String dataDeNascimento)
+        + boolean addTelefone(Telefone telefone)
+        + boolean addEmail(Email email)
+        + boolean deleteTelefone(int index)
+        + boolean deleteEmail(int index)
+        + String imprimirTelefones()
+        + String imprimirEmails()
+        + toSting()
         
     }
     class Telefone {
-        - HashMap~rotulo,valor~
+        - String rotulo
+        - String telefone
+        + Telefone(String rotulo, String valor)
         + toSring()
+        - String formataTelefone(String valor)
     }
     class Email {
-        - HashMap~rotulo,valor~
-        + boolean validaEmail(String valor)
+        - String rotulo
+        - String valor
+        + Email(String rotulo, String valor)
+        + toString()
+        - String validaEmail(String valor)
     }
     
 ```
