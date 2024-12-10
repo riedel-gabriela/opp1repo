@@ -1,20 +1,47 @@
 package org.example;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class Contato {
     private String nome;
     private String sobrenome;
-    private String dataDeNascimento;
+    private LocalDate dataDeNascimento;
     private ArrayList<Telefone> telefones;
     private ArrayList<Email> emails;
 
     public Contato(String nome, String sobrenome, String dataDeNascimento) {
         this.nome = nome;
         this.sobrenome = sobrenome;
-        this.dataDeNascimento = dataDeNascimento;
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        this.dataDeNascimento = LocalDate.parse(dataDeNascimento, dtf);
         this.telefones = new ArrayList<>();
         this.emails = new ArrayList<>();
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getSobrenome() {
+        return sobrenome;
+    }
+
+    public void setSobrenome(String sobrenome) {
+        this.sobrenome = sobrenome;
+    }
+
+    public String getDataDeNascimento() {
+        return dataDeNascimento;
+    }
+
+    public void setDataDeNascimento(String dataDeNascimento) {
+        this.dataDeNascimento = dataDeNascimento;
     }
 
     boolean addTelefone(Telefone telefone) {

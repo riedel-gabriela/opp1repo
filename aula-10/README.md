@@ -19,15 +19,16 @@ classDiagram
     class Agenda {
         - ArrayList~Contato~ contatos
         + boolean addContato(Contato contato)
-        + boolean deleteContato(int index)
-        + boolean updateContato(int index, Contato contato)
+        + boolean deleteContato(String nome, String sobrenome)
+        + boolean updateTelefone(String rotulo, String nome)
+        + boolean updateEmail(String rotulo, String nome)
         + Contato getContato(int index)
-        + Sring getTodosContatos()
+        + String getTodosContatos()
     }
     class Contato {
         - String nome
         - String sobrenome
-        - String dataDeNascimento
+        - LocalDate dataDeNascimento
         - ArrayList~Telefone~ telefones
         - ArrayList~Email~ emails
         + Contato(Strig nome, String sobrenome, String dataDeNascimento)
