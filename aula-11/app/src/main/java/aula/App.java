@@ -3,9 +3,18 @@
  */
 package aula;
 
+import aula.produtos.Dimensao;
+import aula.produtos.SemFio;
+import aula.produtos.Telefone;
+
 public class App {
 
     public static void main(String[] args) {
+        Telefone tel = new Telefone(1, "123a", "anatel", 2.0, new Dimensao(0.12, 23.0, 0.50));
+        SemFio telSemFio = new SemFio(2, "143a", "anatel", 1.0, new Dimensao(0.12, 25.0, 0.50),22.0, 5, 20.0);
+
+        System.out.println(tel.toString());
+        System.out.println(telSemFio.toString());
 
     }
 }
