@@ -14,9 +14,11 @@ classDiagram
     class Livro {
         - String Tema
         - Integer Volumes
+        - String Autor
     }
     class Jornal {
         - String Anuncio
+        - DateTime DataPublicação
     }
     class Revista {
         - String Tema

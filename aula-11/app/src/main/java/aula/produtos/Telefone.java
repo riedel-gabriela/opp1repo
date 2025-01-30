@@ -15,6 +15,10 @@ public class Telefone {
         this.dimensao = dimensao;
     }
 
+    public String discar() {
+        return "discando";
+    }
+
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Telefone{");

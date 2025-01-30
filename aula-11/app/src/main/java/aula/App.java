@@ -7,6 +7,9 @@ import aula.produtos.Dimensao;
 import aula.produtos.SemFio;
 import aula.produtos.Telefone;
 
+import java.util.ArrayList;
+import java.util.Objects;
+
 public class App {
 
     public static void main(String[] args) {
@@ -16,5 +19,25 @@ public class App {
         System.out.println(tel.toString());
         System.out.println(telSemFio.toString());
 
+        SemFio a = telSemFio;
+        Telefone b;
+        telSemFio.trocarCanal();
+        b = telSemFio;
+        //fazendo coerção de tipos (type cast)
+        ((SemFio)b).trocarCanal();
+
+        ArrayList<Object> arr = new ArrayList<>();
+        arr.add(b);
+        arr.add(a);
+        arr.add(tel);
+        arr.add(telSemFio);
+
+        arr.forEach(elemento -> {
+            if (elemento instanceof SemFio) {
+                System.out.println(((SemFio)b).trocarCanal());
+            } else {
+                System.out.println("não é sem fio.");
+            }
+        });
     }
 }

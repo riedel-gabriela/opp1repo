@@ -13,6 +13,10 @@ public class SemFio extends Telefone{
         this.distancia = distancia;
     }
 
+    public String trocarCanal() {
+        return "trocando canal";
+    }
+
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("SemFio{");
