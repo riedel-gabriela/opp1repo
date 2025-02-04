@@ -9,8 +9,8 @@ classDiagram
         - Integer Vida
         - Integer Ataque
         - Double Velocidade
-        + String atacar()
-        + String mover()
+        + String atacar()*
+        + String mover()*
     }
     class Arqueiro{
         

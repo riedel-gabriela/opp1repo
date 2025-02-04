@@ -1,9 +1,6 @@
 package aula.ageOfEmpires;
 
-import aula.ageOfEmpires.Personagens.Aldeao;
-import aula.ageOfEmpires.Personagens.Arqueiro;
-import aula.ageOfEmpires.Personagens.Cavaleiro;
-import aula.ageOfEmpires.Personagens.Personagem;
+import aula.ageOfEmpires.Personagens.*;
 
 import java.util.ArrayList;
 
@@ -16,7 +13,7 @@ public class App {
         aldeia.add(new Cavaleiro(1.5, 3, 50));
 
         aldeia.forEach(personagem -> {
-            System.out.println(personagem.atacar());
+            System.out.println(((Guerreiro)personagem).atacar());
             System.out.println(personagem.mover());
         });
     }

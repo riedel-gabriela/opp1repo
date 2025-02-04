@@ -1,6 +1,9 @@
 package aula.ageOfEmpires.Personagens;
 
-public class Personagem {
+
+//Para que essa classe sirva só de gabarito, e não possa fazer um personagem sem as características de personagem, é necessároio que
+//eu transforme essa classe e uma CLASSE ABSTRATA.
+public abstract class Personagem {
     private Integer vida;
     private Integer ataque;
     private Double velocidade;
@@ -11,13 +14,7 @@ public class Personagem {
         this.vida = vida;
     }
 
-    public String atacar(){
-        return "Atacando com ";
-    }
-
-    public String mover() {
-        return "Movendo na velocidade ";
-    }
+    public abstract String mover();
 
     @Override
     public String toString() {

@@ -6,10 +6,10 @@ public class Catapulta extends Personagem{
     }
 
     public String atacar() {
-        return super.atacar() + "pedras.";
+        return "Catapulta atacando com pedras.";
     }
 
     public String mover() {
-        return super.mover() + "2.";
+        return "Catapulta se movendo na velocidade 2.";
     }
 }
