@@ -16,11 +16,10 @@ repositories {
 }
 
 dependencies {
-    // Use JUnit test framework.
-    testImplementation(libs.junit)
+    // Use JUnit Jupiter for testing.
+    testImplementation(libs.junit.jupiter)
 
-    // Importando bibliotecas internamente.
-    implementation(files("libs/algs4.jar"))
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
     // This dependency is used by the application.
     implementation(libs.guava)
@@ -35,5 +34,10 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass.set("aula.App")
+    mainClass.set("labherplomorfismo.App")
+}
+
+tasks.named<Test>("test") {
+    // Use JUnit Platform for unit tests.
+    useJUnitPlatform()
 }
